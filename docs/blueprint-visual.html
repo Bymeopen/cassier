@@ -1,0 +1,240 @@
+<title>Kasir Warung Bakso</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: satu kolom bacaan, tiap bagian = satu judul + satu gambar + penjelasan pendek */
+:root{
+  --bg:#F5F8F7; --fg:#14232B; --muted:#4F626A; --card:#FFFFFF; --line:#C5D3D0;
+  --brand:#1F6F5C; --brand-soft:#DCEFE9; --accent:#C8372D; --accent-soft:#FBE4E1;
+  --display:'Bricolage Grotesque','Trebuchet MS',sans-serif;
+  --body:'Source Sans 3','Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1A1F; --fg:#E8F0EE; --muted:#9DB1B4; --card:#172730; --line:#2D424A;
+  --brand:#4FC3A1; --brand-soft:#173B36; --accent:#FF7468; --accent-soft:#40201F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1A1F; --fg:#E8F0EE; --muted:#9DB1B4; --card:#172730; --line:#2D424A;
+  --brand:#4FC3A1; --brand-soft:#173B36; --accent:#FF7468; --accent-soft:#40201F; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+h1,h2{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem)}
+h2{font-size:1.55rem;margin-bottom:6px}
+p{margin:0 0 12px;max-width:65ch}
+.lead{font-size:1.15rem;color:var(--muted)}
+.tag{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+section{display:flex;flex-direction:column;gap:12px;min-width:0}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:12px}
+.scroll svg{display:block;width:100%;min-width:640px;height:auto;color:var(--fg)}
+figcaption{font-size:.92rem;color:var(--muted)}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.benefits div{border-top:3px solid var(--brand);padding-top:10px;min-width:0}
+.benefits b{display:block;font-family:var(--display);font-size:1.05rem}
+.benefits span{color:var(--muted);font-size:.95rem}
+table{border-collapse:collapse;width:100%;font-size:.97rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+ol.q{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:6px}
+a{color:var(--brand)}
+/* gaya gambar */
+.box{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.hl{fill:var(--brand-soft);stroke:var(--brand);stroke-width:1.5}
+.warn{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.t{fill:var(--fg);font:600 14px var(--body)}
+.s{fill:var(--muted);font:12.5px var(--body)}
+.ac{fill:var(--accent);font:600 12.5px var(--body)}
+.br{fill:var(--brand);font:600 12.5px var(--body)}
+.arr{stroke:currentColor;stroke-width:1.6;fill:none}
+.dash{stroke:var(--brand);stroke-width:1.8;fill:none;stroke-dasharray:6 5}
+.cut{stroke:var(--accent);stroke-width:2.5;fill:none}
+@media (prefers-reduced-motion:no-preference){a{transition:opacity .15s}a:hover{opacity:.8}}
+</style>
+
+<main>
+<header>
+  <div class="tag">Blueprint versi sederhana</div>
+  <h1>Kasir Warung Bakso</h1>
+  <p class="lead">Aplikasi kasir di HP atau tablet. Tetap jalan walau internet mati, cetak struk, terima QRIS, dan kasih laporan harian ke pemilik.</p>
+</header>
+
+<section>
+  <h2>Apa yang didapat warung</h2>
+  <div class="benefits">
+    <div><b>Pesanan lebih cepat</b><span>Ketuk menu, ketuk bayar, struk keluar. Target kurang dari 30 detik per pelanggan.</span></div>
+    <div><b>Uang tidak bocor</b><span>Setiap shift dihitung. Batal atau refund harus pakai PIN pemilik atau manajer.</span></div>
+    <div><b>Pemilik tahu kondisi</b><span>Omzet, menu terlaris, dan selisih kas bisa dilihat dari HP kapan saja.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>1. Satu pesanan dari awal sampai selesai</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 150" role="img" aria-label="Alur satu pesanan: pelanggan memesan, kasir memilih menu, pelanggan membayar, struk tercetak, dapur melihat pesanan">
+        <defs><marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+        <g>
+          <rect class="box" x="10" y="40" width="140" height="64" rx="8"/><text class="t" x="80" y="68" text-anchor="middle">Pelanggan</text><text class="s" x="80" y="88" text-anchor="middle">pesan di meja</text>
+          <rect class="box" x="184" y="40" width="140" height="64" rx="8"/><text class="t" x="254" y="68" text-anchor="middle">Kasir pilih menu</text><text class="s" x="254" y="88" text-anchor="middle">pedas, tanpa mie, dll</text>
+          <rect class="hl" x="358" y="40" width="140" height="64" rx="8"/><text class="t" x="428" y="68" text-anchor="middle">Bayar</text><text class="s" x="428" y="88" text-anchor="middle">tunai atau QRIS</text>
+          <rect class="box" x="532" y="40" width="140" height="64" rx="8"/><text class="t" x="602" y="68" text-anchor="middle">Struk tercetak</text><text class="s" x="602" y="88" text-anchor="middle">nomor antrian A-014</text>
+          <rect class="box" x="706" y="40" width="140" height="64" rx="8"/><text class="t" x="776" y="68" text-anchor="middle">Dapur</text><text class="s" x="776" y="88" text-anchor="middle">lihat tiket, siapkan</text>
+        </g>
+        <g class="arr" marker-end="url(#a1)">
+          <line x1="150" y1="72" x2="182" y2="72" marker-end="url(#a1)"/>
+          <line x1="324" y1="72" x2="356" y2="72" marker-end="url(#a1)"/>
+          <line x1="498" y1="72" x2="530" y2="72" marker-end="url(#a1)"/>
+          <line x1="672" y1="72" x2="704" y2="72" marker-end="url(#a1)"/>
+        </g>
+        <text class="ac" x="428" y="130" text-anchor="middle">tunai: hitung kembalian otomatis</text>
+      </svg>
+    </div>
+    <figcaption>Semua langkah terjadi di satu layar kasir. Tidak ada kertas catatan.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>2. Tampilan layar kasir</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 700 330" role="img" aria-label="Sketsa layar kasir: kiri tombol menu besar, kanan keranjang dan tombol Bayar">
+        <rect class="box" x="10" y="10" width="680" height="310" rx="14"/>
+        <text class="s" x="30" y="38">Kategori:</text>
+        <rect class="hl" x="95" y="22" width="80" height="24" rx="12"/><text class="br" x="135" y="39" text-anchor="middle">Bakso</text>
+        <rect class="box" x="185" y="22" width="70" height="24" rx="12"/><text class="s" x="220" y="39" text-anchor="middle">Mie</text>
+        <rect class="box" x="265" y="22" width="80" height="24" rx="12"/><text class="s" x="305" y="39" text-anchor="middle">Minuman</text>
+        <g>
+          <rect class="box" x="30" y="64" width="140" height="80" rx="10"/><text class="t" x="100" y="100" text-anchor="middle">Bakso Urat</text><text class="s" x="100" y="120" text-anchor="middle">Rp15.000</text>
+          <rect class="box" x="184" y="64" width="140" height="80" rx="10"/><text class="t" x="254" y="100" text-anchor="middle">Bakso Telur</text><text class="s" x="254" y="120" text-anchor="middle">Rp17.000</text>
+          <rect class="box" x="30" y="158" width="140" height="80" rx="10"/><text class="t" x="100" y="194" text-anchor="middle">Bakso Halus</text><text class="s" x="100" y="214" text-anchor="middle">Rp13.000</text>
+          <rect class="box" x="184" y="158" width="140" height="80" rx="10"/><text class="t" x="254" y="194" text-anchor="middle">Bakso Campur</text><text class="s" x="254" y="214" text-anchor="middle">Rp20.000</text>
+          <rect class="box" x="30" y="252" width="140" height="56" rx="10"/><text class="t" x="100" y="285" text-anchor="middle">Es Teh</text>
+          <rect class="box" x="184" y="252" width="140" height="56" rx="10"/><text class="t" x="254" y="285" text-anchor="middle">Kerupuk</text>
+        </g>
+        <rect x="350" y="22" width="326" height="286" rx="10" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <text class="t" x="366" y="48">Pesanan A-014 · Meja 3</text>
+        <text class="s" x="366" y="80">2 × Bakso Urat, pedas 3</text><text class="s" x="660" y="80" text-anchor="end">Rp30.000</text>
+        <text class="s" x="366" y="104">1 × Bakso Campur, tanpa mie</text><text class="s" x="660" y="104" text-anchor="end">Rp20.000</text>
+        <text class="s" x="366" y="128">2 × Es Teh</text><text class="s" x="660" y="128" text-anchor="end">Rp10.000</text>
+        <line x1="366" y1="190" x2="660" y2="190" stroke="var(--line)"/>
+        <text class="t" x="366" y="222" style="font-size:18px">Total</text><text class="t" x="660" y="222" text-anchor="end" style="font-size:18px">Rp60.000</text>
+        <rect x="366" y="244" width="294" height="50" rx="10" fill="var(--accent)"/><text x="513" y="276" text-anchor="middle" style="fill:#fff;font:700 17px var(--body)">BAYAR</text>
+      </svg>
+    </div>
+    <figcaption>Menu kiri, pesanan kanan. Tombol besar supaya cepat ditekan saat antrian ramai.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>3. Kalau internet mati, kasir tetap jalan</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 270" role="img" aria-label="Saat internet mati pesanan disimpan di HP kasir dan struk tetap tercetak. Saat internet hidup data terkirim otomatis ke penyimpanan online dan pemilik bisa melihat laporan">
+        <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
+        <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--brand)"/></marker></defs>
+        <text class="ac" x="10" y="22">INTERNET MATI</text>
+        <rect class="warn" x="10" y="36" width="190" height="64" rx="8"/><text class="t" x="105" y="62" text-anchor="middle">HP kasir</text><text class="s" x="105" y="82" text-anchor="middle">pesanan disimpan di HP</text>
+        <rect class="box" x="290" y="36" width="150" height="64" rx="8"/><text class="t" x="365" y="62" text-anchor="middle">Printer struk</text><text class="s" x="365" y="82" text-anchor="middle">tetap mencetak</text>
+        <line class="arr" x1="200" y1="68" x2="288" y2="68" marker-end="url(#a2)"/>
+        <rect class="box" x="560" y="36" width="170" height="64" rx="8" style="stroke-dasharray:5 4"/><text class="s" x="645" y="62" text-anchor="middle">Penyimpanan online</text><text class="s" x="645" y="82" text-anchor="middle">tidak terjangkau</text>
+        <line class="cut" x1="440" y1="52" x2="480" y2="84"/><line class="cut" x1="480" y1="52" x2="440" y2="84"/>
+        <text class="ac" x="460" y="108" text-anchor="middle">putus</text>
+
+        <line x1="10" y1="132" x2="850" y2="132" stroke="var(--line)"/>
+
+        <text class="br" x="10" y="162">INTERNET KEMBALI</text>
+        <rect class="hl" x="10" y="176" width="190" height="64" rx="8"/><text class="t" x="105" y="202" text-anchor="middle">HP kasir</text><text class="s" x="105" y="222" text-anchor="middle">ada data belum terkirim</text>
+        <rect class="box" x="330" y="176" width="190" height="64" rx="8"/><text class="t" x="425" y="202" text-anchor="middle">Penyimpanan online</text><text class="s" x="425" y="222" text-anchor="middle">aman, ada backup harian</text>
+        <rect class="box" x="650" y="176" width="190" height="64" rx="8"/><text class="t" x="745" y="202" text-anchor="middle">HP pemilik</text><text class="s" x="745" y="222" text-anchor="middle">lihat laporan</text>
+        <line class="dash" x1="200" y1="208" x2="328" y2="208" marker-end="url(#a3)"/>
+        <text class="br" x="264" y="198" text-anchor="middle">kirim otomatis</text>
+        <line class="arr" x1="520" y1="208" x2="648" y2="208" marker-end="url(#a2)"/>
+        <text class="s" x="584" y="198" text-anchor="middle">laporan</text>
+      </svg>
+    </div>
+    <figcaption>Pesanan tidak hilang dan tidak tercatat dua kali, walau koneksi putus-nyambung. Hanya pembayaran QRIS yang butuh internet.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>4. Uang harian: buka sampai tutup kasir</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 190" role="img" aria-label="Alur uang harian: buka kasir dengan modal, jualan, tutup kasir dan hitung uang. Jika selisih lebih dari lima ribu rupiah pemilik diberi tahu, jika cocok laporan dikirim">
+        <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+        <rect class="box" x="10" y="30" width="150" height="64" rx="8"/><text class="t" x="85" y="58" text-anchor="middle">Buka kasir</text><text class="s" x="85" y="78" text-anchor="middle">isi modal Rp200.000</text>
+        <rect class="box" x="210" y="30" width="150" height="64" rx="8"/><text class="t" x="285" y="58" text-anchor="middle">Jualan</text><text class="s" x="285" y="78" text-anchor="middle">tunai + QRIS</text>
+        <rect class="hl" x="410" y="30" width="150" height="64" rx="8"/><text class="t" x="485" y="58" text-anchor="middle">Tutup kasir</text><text class="s" x="485" y="78" text-anchor="middle">hitung uang di laci</text>
+        <rect class="box" x="710" y="14" width="140" height="48" rx="8"/><text class="t" x="780" y="43" text-anchor="middle">Laporan terkirim</text>
+        <rect class="warn" x="710" y="108" width="140" height="64" rx="8"/><text class="t" x="780" y="134" text-anchor="middle">Pemilik diberi</text><text class="t" x="780" y="152" text-anchor="middle">tahu selisih</text>
+        <g class="arr">
+          <line x1="160" y1="62" x2="208" y2="62" marker-end="url(#a4)"/>
+          <line x1="360" y1="62" x2="408" y2="62" marker-end="url(#a4)"/>
+          <polyline points="560,62 610,62" />
+          <line x1="610" y1="62" x2="610" y2="38"/><line x1="610" y1="38" x2="708" y2="38" marker-end="url(#a4)"/>
+          <line x1="610" y1="62" x2="610" y2="140"/><line x1="610" y1="140" x2="708" y2="140" marker-end="url(#a4)"/>
+        </g>
+        <text class="br" x="618" y="30">cocok</text>
+        <text class="ac" x="618" y="132">selisih &gt; Rp5.000</text>
+      </svg>
+    </div>
+    <figcaption>Uang yang seharusnya ada di laci dihitung sistem, lalu dibandingkan dengan hasil hitung kasir.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>5. Jadwal: 6 minggu sampai warung memakai</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 230" role="img" aria-label="Jadwal enam minggu: minggu satu fondasi dan tes printer, minggu dua dan tiga kasir inti, minggu empat pembayaran QRIS dan shift, minggu lima laporan dan pengaman, minggu enam uji coba paralel lalu resmi dipakai">
+        <g>
+          <line x1="10" y1="40" x2="850" y2="40" stroke="var(--line)"/>
+          <text class="s" x="75" y="30" text-anchor="middle">Minggu 1</text><text class="s" x="215" y="30" text-anchor="middle">Minggu 2</text><text class="s" x="355" y="30" text-anchor="middle">Minggu 3</text>
+          <text class="s" x="495" y="30" text-anchor="middle">Minggu 4</text><text class="s" x="635" y="30" text-anchor="middle">Minggu 5</text><text class="s" x="775" y="30" text-anchor="middle">Minggu 6</text>
+        </g>
+        <rect class="hl" x="10" y="56" width="130" height="46" rx="6"/><text class="t" x="75" y="75" text-anchor="middle">Fondasi</text><text class="s" x="75" y="92" text-anchor="middle">tes printer</text>
+        <rect class="hl" x="150" y="56" width="270" height="46" rx="6"/><text class="t" x="285" y="75" text-anchor="middle">Kasir inti</text><text class="s" x="285" y="92" text-anchor="middle">menu, pesanan, tunai, struk, offline</text>
+        <rect class="hl" x="430" y="56" width="130" height="46" rx="6"/><text class="t" x="495" y="75" text-anchor="middle">QRIS &amp; shift</text><text class="s" x="495" y="92" text-anchor="middle">void, refund</text>
+        <rect class="hl" x="570" y="56" width="130" height="46" rx="6"/><text class="t" x="635" y="75" text-anchor="middle">Laporan</text><text class="s" x="635" y="92" text-anchor="middle">backup, keamanan</text>
+        <rect class="warn" x="710" y="56" width="140" height="46" rx="6"/><text class="t" x="780" y="75" text-anchor="middle">Uji coba</text><text class="s" x="780" y="92" text-anchor="middle">paralel dg catatan lama</text>
+        <polygon points="850,128 850,148 868,138" fill="var(--accent)" transform="translate(-18 0)"/>
+        <text class="ac" x="780" y="170" text-anchor="middle">Resmi dipakai</text>
+        <rect class="box" x="150" y="190" width="540" height="30" rx="6" style="stroke-dasharray:5 4"/>
+        <text class="s" x="420" y="210" text-anchor="middle">Tahap berikutnya: stok bahan baku, layar dapur, banyak cabang</text>
+      </svg>
+    </div>
+    <figcaption>Minggu 1 menguji hal paling berisiko lebih dulu: apakah printer Bluetooth di HP warung bisa stabil.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Perkiraan biaya</h2>
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>Komponen</th><th>Perkiraan</th></tr></thead>
+    <tbody>
+      <tr><td>Server online + backup (bulanan)</td><td>Rp170–350 rb</td></tr>
+      <tr><td>Domain (rata-rata per bulan)</td><td>Rp15 rb</td></tr>
+      <tr><td>Printer struk 58mm Bluetooth (sekali beli)</td><td>Rp250–450 rb</td></tr>
+      <tr><td>Biaya QRIS</td><td>± 0,7% per transaksi QRIS</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="font-size:.9rem;color:var(--muted)">Angka perkiraan. Tarif QRIS dicek ulang ke penyedia sebelum dipilih.</p>
+</section>
+
+<section>
+  <h2>Perlu keputusan Anda</h2>
+  <ol class="q">
+    <li>Berapa cabang dan berapa HP kasir saat mulai?</li>
+    <li>Apakah struk perlu mencantumkan pajak restoran 10%? Tergantung daerah, sebaiknya tanyakan konsultan pajak.</li>
+    <li>Penyedia QRIS yang dipilih: Xendit atau Midtrans.</li>
+    <li>Apakah pesanan GoFood/GrabFood perlu masuk sejak awal?</li>
+    <li>Apakah dapur butuh layar atau printer tiket sendiri?</li>
+  </ol>
+  <p style="margin-top:8px">Versi teknis lengkap: <a href="https://github.com/Bymeopen/cassier/blob/ccr-3011aff8-dzxk5x/docs/BLUEPRINT.md">docs/BLUEPRINT.md</a></p>
+</section>
+</main>
