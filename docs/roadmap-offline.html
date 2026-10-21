@@ -1,0 +1,231 @@
+<title>Peta Jalan Kasir Offline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: satu kolom bacaan; tiap bagian = judul + satu gambar + keterangan pendek */
+:root{
+  --bg:#F5F8F7; --fg:#14232B; --muted:#4F626A; --card:#FFFFFF; --line:#C5D3D0;
+  --brand:#1F6F5C; --brand-soft:#DCEFE9; --accent:#C8372D; --accent-soft:#FBE4E1;
+  --display:'Bricolage Grotesque','Trebuchet MS',sans-serif;
+  --body:'Source Sans 3','Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1A1F; --fg:#E8F0EE; --muted:#9DB1B4; --card:#172730; --line:#2D424A;
+  --brand:#4FC3A1; --brand-soft:#173B36; --accent:#FF7468; --accent-soft:#40201F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1A1F; --fg:#E8F0EE; --muted:#9DB1B4; --card:#172730; --line:#2D424A;
+  --brand:#4FC3A1; --brand-soft:#173B36; --accent:#FF7468; --accent-soft:#40201F; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;
+  padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+h1,h2{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem)}
+h2{font-size:1.55rem;margin-bottom:6px}
+p{margin:0 0 12px;max-width:65ch}
+.lead{font-size:1.15rem;color:var(--muted)}
+.tag{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+section{display:flex;flex-direction:column;gap:12px;min-width:0}
+figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.scroll{overflow-x:auto;border:1px solid var(--line);background:var(--card);border-radius:8px;padding:12px}
+.scroll svg{display:block;width:100%;min-width:680px;height:auto;color:var(--fg)}
+figcaption{font-size:.92rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.facts div{border-top:3px solid var(--brand);padding-top:10px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:1.05rem}
+.facts span{color:var(--muted);font-size:.95rem}
+ol.q,ul.r{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:6px}
+a{color:var(--brand)}
+.box{fill:var(--card);stroke:var(--line);stroke-width:1.5}
+.hl{fill:var(--brand-soft);stroke:var(--brand);stroke-width:1.5}
+.warn{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+.dashed{stroke-dasharray:6 5}
+.t{fill:var(--fg);font:600 14px var(--body)}
+.s{fill:var(--muted);font:12.5px var(--body)}
+.ac{fill:var(--accent);font:600 12.5px var(--body)}
+.br{fill:var(--brand);font:600 12.5px var(--body)}
+.arr{stroke:currentColor;stroke-width:1.6;fill:none}
+.grn{stroke:var(--brand);stroke-width:1.8;fill:none}
+.bar{fill:var(--brand);stroke:none}
+.bar2{fill:var(--accent);stroke:none;opacity:.85}
+.onbar{fill:#fff;font:600 12.5px var(--body)}
+</style>
+
+<main>
+<header>
+  <div class="tag">Rencana 12 bulan lebih</div>
+  <h1>Peta Jalan Kasir Offline</h1>
+  <p class="lead">Apa saja yang bisa ditambahkan ke aplikasi kasir yang datanya hanya di HP, kapan membangunnya, dan di titik mana baru perlu internet.</p>
+</header>
+
+<section>
+  <h2>Intinya</h2>
+  <div class="facts">
+    <div><b>4 tahap tanpa server</b><span>Kasir, stok, pelanggan, dan analisis semuanya bisa jalan di HP.</span></div>
+    <div><b>Biaya aplikasi Rp0</b><span>Tidak ada sewa server selama tetap offline. Yang dibeli hanya printer struk.</span></div>
+    <div><b>Batasnya jelas</b><span>Beberapa HP, pantau dari jauh, dan QRIS otomatis butuh internet. Itu Tahap 5.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>1. Aplikasi tumbuh bertahap</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 480" role="img" aria-label="Lima tahap pertumbuhan aplikasi, dari fondasi data lokal di bawah, tahap satu kasir inti, tahap dua stok dan untung rugi, tahap tiga pelanggan dan promo, tahap empat analisis, sampai tahap lima yang butuh internet di paling atas">
+        <defs><marker id="b1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+        <line class="arr" x1="20" y1="450" x2="20" y2="24" marker-end="url(#b1)"/>
+        <text class="s" x="32" y="20">tumbuh</text>
+
+        <rect class="warn dashed" x="40" y="10" width="200" height="70" rx="8"/><text class="ac" x="140" y="38" text-anchor="middle">TAHAP 5 · opsional</text><text class="s" x="140" y="58" text-anchor="middle">butuh internet + server</text>
+        <rect class="box dashed" x="250" y="10" width="600" height="70" rx="8"/>
+        <text class="s" x="266" y="40">Beberapa HP saling sinkron · pemilik pantau dari rumah · QRIS otomatis</text>
+        <text class="s" x="266" y="62">Pesanan ojol masuk otomatis · banyak cabang digabung</text>
+
+        <rect class="hl" x="40" y="100" width="200" height="70" rx="8"/><text class="t" x="140" y="128" text-anchor="middle">TAHAP 4 · analisis</text><text class="s" x="140" y="148" text-anchor="middle">bulan 9–12</text>
+        <rect class="box" x="250" y="100" width="600" height="70" rx="8"/>
+        <text class="s" x="266" y="130">Prakiraan belanja bahan dari riwayat · jam ramai · menu untung vs rugi</text>
+        <text class="s" x="266" y="152">Laba rugi bulanan · target omzet · ekspor Excel/PDF · backup terenkripsi</text>
+
+        <rect class="hl" x="40" y="190" width="200" height="70" rx="8"/><text class="t" x="140" y="218" text-anchor="middle">TAHAP 3 · pelanggan</text><text class="s" x="140" y="238" text-anchor="middle">bulan 5–8</text>
+        <rect class="box" x="250" y="190" width="600" height="70" rx="8"/>
+        <text class="s" x="266" y="220">Pelanggan dari nomor HP · poin & kartu stempel · voucher & promo jam sepi</text>
+        <text class="s" x="266" y="242">Paket hemat · pesanan titipan/pre-order · kirim struk lewat WhatsApp</text>
+
+        <rect class="hl" x="40" y="280" width="200" height="70" rx="8"/><text class="t" x="140" y="308" text-anchor="middle">TAHAP 2 · stok & untung</text><text class="s" x="140" y="328" text-anchor="middle">bulan 2–4</text>
+        <rect class="box" x="250" y="280" width="600" height="70" rx="8"/>
+        <text class="s" x="266" y="310">Bahan & resep per porsi · stok berkurang otomatis · peringatan stok tipis</text>
+        <text class="s" x="266" y="332">Catat belanja & pengeluaran · modal & laba per menu · cek stok mingguan</text>
+
+        <rect class="hl" x="40" y="370" width="200" height="70" rx="8"/><text class="t" x="140" y="398" text-anchor="middle">TAHAP 1 · kasir inti</text><text class="s" x="140" y="418" text-anchor="middle">bulan 0–1,5</text>
+        <rect class="box" x="250" y="370" width="600" height="70" rx="8"/>
+        <text class="s" x="266" y="400">Menu & modifier · pesanan · tunai · QRIS statis manual · struk · shift & kas</text>
+        <text class="s" x="266" y="422">Batal/refund dengan PIN · laporan harian · backup file</text>
+
+        <rect class="bar" x="40" y="450" width="810" height="26" rx="6"/><text class="onbar" x="445" y="468" text-anchor="middle">Fondasi: data tersimpan di HP · jalan tanpa internet</text>
+      </svg>
+    </div>
+    <figcaption>Tiap tahap berdiri di atas tahap sebelumnya, jadi warung sudah bisa dipakai sejak Tahap 1 dan tidak perlu menunggu semuanya selesai.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>2. Jadwal 15 bulan</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 330" role="img" aria-label="Jadwal bulan nol sampai lima belas: tahap satu bulan 0 sampai 1,5 lalu live di warung, tahap dua bulan 2 sampai 4, tahap tiga bulan 5 sampai 8, tahap empat bulan 9 sampai 12, lalu pengecekan apakah perlu online dan tahap lima setelahnya">
+        <g stroke="var(--line)"><line x1="130" y1="40" x2="130" y2="260"/><line x1="274" y1="40" x2="274" y2="260"/><line x1="418" y1="40" x2="418" y2="260"/><line x1="562" y1="40" x2="562" y2="260"/><line x1="706" y1="40" x2="706" y2="260"/><line x1="850" y1="40" x2="850" y2="260"/></g>
+        <g class="s" text-anchor="middle"><text x="130" y="30">Bln 0</text><text x="274" y="30">Bln 3</text><text x="418" y="30">Bln 6</text><text x="562" y="30">Bln 9</text><text x="706" y="30">Bln 12</text><text x="850" y="30">Bln 15</text></g>
+        <text class="t" x="10" y="72">Tahap 1</text><text class="t" x="10" y="122">Tahap 2</text><text class="t" x="10" y="172">Tahap 3</text><text class="t" x="10" y="222">Tahap 4</text><text class="ac" x="10" y="252">Tahap 5</text>
+        <rect class="bar" x="130" y="54" width="72" height="26" rx="5"/><text class="onbar" x="166" y="72" text-anchor="middle">Kasir</text>
+        <rect class="bar" x="226" y="104" width="96" height="26" rx="5"/><text class="onbar" x="274" y="122" text-anchor="middle">Stok & laba</text>
+        <rect class="bar" x="370" y="154" width="144" height="26" rx="5"/><text class="onbar" x="442" y="172" text-anchor="middle">Pelanggan & promo</text>
+        <rect class="bar" x="562" y="204" width="144" height="26" rx="5"/><text class="onbar" x="634" y="222" text-anchor="middle">Analisis</text>
+        <rect class="box dashed" x="754" y="234" width="96" height="26" rx="5" style="stroke:var(--accent)"/><text class="ac" x="802" y="252" text-anchor="middle">bila perlu</text>
+        <path d="M202 290 l8 -9 l8 9 l-8 9z" fill="var(--brand)"/><text class="br" x="210" y="316" text-anchor="middle">Live di warung</text>
+        <path d="M706 290 l8 -9 l8 9 l-8 9z" fill="var(--accent)"/><text class="ac" x="714" y="316" text-anchor="middle">Cek: perlu online?</text>
+      </svg>
+    </div>
+    <figcaption>Warung tidak terhenti selama pengembangan karena tiap tahap bisa dipakai begitu selesai. Di bulan 12 diputuskan apakah perlu naik ke Tahap 5.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>3. Apa yang bisa dan tidak bisa tanpa internet</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 300" role="img" aria-label="Kiri: delapan hal yang bisa dilakukan sepenuhnya offline. Kanan: enam hal yang butuh internet dan server">
+        <rect class="hl" x="10" y="10" width="410" height="280" rx="10"/>
+        <text class="br" x="28" y="38" style="font-size:15px">BISA 100% OFFLINE</text>
+        <g class="t" style="font-weight:400">
+          <text x="28" y="68">✓ Catat penjualan dan cetak struk</text>
+          <text x="28" y="96">✓ Stok bahan dan resep per porsi</text>
+          <text x="28" y="124">✓ Pengeluaran, modal, laba rugi</text>
+          <text x="28" y="152">✓ Pelanggan, poin, voucher, promo</text>
+          <text x="28" y="180">✓ Laporan Excel dan PDF</text>
+          <text x="28" y="208">✓ Backup dan pulihkan lewat file</text>
+          <text x="28" y="236">✓ Prakiraan belanja dari riwayat</text>
+          <text x="28" y="264">✓ Tetap jalan di tempat tanpa sinyal</text>
+        </g>
+        <rect class="warn" x="440" y="10" width="410" height="280" rx="10"/>
+        <text class="ac" x="458" y="38" style="font-size:15px">BUTUH INTERNET + SERVER</text>
+        <g class="t" style="font-weight:400">
+          <text x="458" y="68">✗ Dua HP atau lebih saling sinkron</text>
+          <text x="458" y="102">✗ Pemilik pantau dari rumah</text>
+          <text x="458" y="136">✗ QRIS terkonfirmasi otomatis</text>
+          <text x="458" y="170">✗ Pesanan ojol masuk otomatis</text>
+          <text x="458" y="204">✗ Banyak cabang digabung</text>
+          <text x="458" y="238">✗ Data aman otomatis bila HP hilang</text>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Selama warung memakai satu HP kasir, semua yang di kolom kiri cukup untuk bertahun-tahun.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>4. Cara menjaga data tanpa server</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 240" role="img" aria-label="HP kasir membuat file backup tiap tutup shift lalu dikirim ke WhatsApp pemilik, Google Drive, atau flashdisk. Jika HP rusak, data dipulihkan dari file terakhir">
+        <defs><marker id="b2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
+        <marker id="b3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--accent)"/></marker></defs>
+        <rect class="hl" x="10" y="70" width="170" height="70" rx="8"/><text class="t" x="95" y="100" text-anchor="middle">HP kasir</text><text class="s" x="95" y="120" text-anchor="middle">semua data ada di sini</text>
+        <rect class="box" x="270" y="70" width="150" height="70" rx="8"/><text class="t" x="345" y="100" text-anchor="middle">File backup</text><text class="s" x="345" y="120" text-anchor="middle">dikunci dengan sandi</text>
+        <line class="arr" x1="180" y1="105" x2="268" y2="105" marker-end="url(#b2)"/><text class="br" x="224" y="94" text-anchor="middle">tiap tutup shift</text>
+        <rect class="box" x="560" y="14" width="200" height="50" rx="8"/><text class="t" x="660" y="44" text-anchor="middle">WhatsApp pemilik</text>
+        <rect class="box" x="560" y="80" width="200" height="50" rx="8"/><text class="t" x="660" y="110" text-anchor="middle">Google Drive</text>
+        <rect class="box" x="560" y="146" width="200" height="50" rx="8"/><text class="t" x="660" y="176" text-anchor="middle">Flashdisk (kabel OTG)</text>
+        <line class="arr" x1="420" y1="95" x2="558" y2="42" marker-end="url(#b2)"/>
+        <line class="arr" x1="420" y1="105" x2="558" y2="105" marker-end="url(#b2)"/>
+        <line class="arr" x1="420" y1="115" x2="558" y2="170" marker-end="url(#b2)"/>
+        <path d="M345 142 C345 214 95 214 95 144" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#b3)"/>
+        <text class="ac" x="220" y="230" text-anchor="middle">HP rusak/hilang: pulihkan dari file terakhir</text>
+      </svg>
+    </div>
+    <figcaption>Ini pengganti server. Data aman selama backup benar-benar dikirim, jadi aplikasi mengingatkan saat tutup shift.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>5. Kapan perlu naik ke online (Tahap 5)</h2>
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 860 340" role="img" aria-label="Jika salah satu dari empat pertanyaan dijawab ya, yaitu lebih dari satu HP kasir, pemilik ingin pantau jarak jauh, ada cabang kedua, atau transaksi QRIS banyak, maka naik ke Tahap 5. Jika semua tidak, tetap offline">
+        <defs><marker id="b4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+        <rect class="box" x="10" y="10" width="380" height="50" rx="8"/><text class="t" x="28" y="40">Warung butuh lebih dari 1 HP kasir?</text>
+        <rect class="box" x="10" y="80" width="380" height="50" rx="8"/><text class="t" x="28" y="110">Pemilik ingin memantau dari rumah?</text>
+        <rect class="box" x="10" y="150" width="380" height="50" rx="8"/><text class="t" x="28" y="180">Akan buka cabang kedua?</text>
+        <rect class="box" x="10" y="220" width="380" height="50" rx="8"/><text class="t" x="28" y="250">QRIS &gt; 50 transaksi per hari?</text>
+        <g class="arr"><line x1="390" y1="35" x2="558" y2="35" marker-end="url(#b4)"/><line x1="390" y1="105" x2="558" y2="105" marker-end="url(#b4)"/><line x1="390" y1="175" x2="558" y2="175" marker-end="url(#b4)"/><line x1="390" y1="245" x2="558" y2="245" marker-end="url(#b4)"/></g>
+        <g class="br" text-anchor="middle"><text x="474" y="28">ya</text><text x="474" y="98">ya</text><text x="474" y="168">ya</text><text x="474" y="238">ya</text></g>
+        <rect class="warn" x="560" y="10" width="290" height="260" rx="10"/>
+        <text class="ac" x="705" y="120" text-anchor="middle" style="font-size:15px">TAHAP 5</text>
+        <text class="t" x="705" y="146" text-anchor="middle">tambah satu server kecil</text>
+        <text class="s" x="705" y="170" text-anchor="middle">sinkron · pantau jauh · QRIS otomatis</text>
+        <rect class="hl" x="10" y="290" width="380" height="40" rx="8"/><text class="br" x="200" y="315" text-anchor="middle" style="font-size:14px">Semua jawabannya tidak: tetap offline, Rp0</text>
+      </svg>
+    </div>
+    <figcaption>Cukup satu jawaban ya untuk mulai mempertimbangkan Tahap 5. Datanya tidak dibuang karena sudah disiapkan untuk disinkronkan.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>Aturan main supaya aman</h2>
+  <ul class="r">
+    <li><b>Backup wajib tiap hari.</b> HP hilang berarti data hilang bila belum ada file backup.</li>
+    <li><b>Satu HP kasir.</b> Dua HP tidak saling tahu isi masing-masing sampai Tahap 5.</li>
+    <li><b>Ukuran data kecil.</b> Perkiraan kasar: transaksi satu warung hanya puluhan MB per tahun, jauh di bawah kapasitas HP.</li>
+    <li><b>Kunci layar dan PIN.</b> Data penjualan dan pelanggan ada di HP, jadi HP wajib dikunci.</li>
+    <li><b>Data pelanggan seperlunya.</b> Cukup nama panggilan dan nomor HP, dengan persetujuan mereka.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Perlu keputusan Anda</h2>
+  <ol class="q">
+    <li>Setelah kasir jadi, mana yang didahulukan: <b>stok dan laba (Tahap 2)</b> atau <b>pelanggan dan promo (Tahap 3)</b>?</li>
+    <li>Siapa yang bertugas mengirim backup tiap tutup shift?</li>
+    <li>Pelanggan tetap sering datang? Itu menentukan apakah Tahap 3 layak lebih awal.</li>
+  </ol>
+  <p style="margin-top:8px">Dokumen terkait: <a href="https://github.com/Bymeopen/cassier/blob/ccr-3011aff8-dzxk5x/docs/BLUEPRINT.md">blueprint teknis</a></p>
+</section>
+</main>
